@@ -9,16 +9,16 @@ if __name__ == "__main__":
         except ValueError:
             print("Please enter a valid integer.")
 
-    valid_inputs = ['p', 't', 's', 'c', 'i']
+    valid_inputs = ['p', 't', 's', 'r', 'c', 'i']
     while True:
         number_type_to_check = input(
-            "Would you like to check prime numbers (p), triangle numbers (t), square numbers (s), cube numbers (c), "
+            "Would you like to check prime numbers (p), triangle numbers (t), square numbers (s), square root numbers (r), cube numbers (c), "
             "or integers (i)? ").lower()
 
         if number_type_to_check in valid_inputs:
             break
         else:
-            print("Please enter a valid option: p, t, s, c, or i.")
+            print("Please enter a valid option: p, t, s, r, c, or i.")
 
     numbers = list(range(1, max_limit + 1))
 
@@ -31,6 +31,9 @@ if __name__ == "__main__":
     elif number_type_to_check[0] == "s":
         numbers_to_check = generate_square_numbers(max_limit)
         number_type = "square numbers"
+    elif number_type_to_check[0] == "r":
+        numbers_to_check = generate_square_root_numbers(max_limit)
+        number_type = "square root numbers"
     elif number_type_to_check[0] == "c":
         numbers_to_check = generate_cube_numbers(max_limit)
         number_type = "cube numbers"
@@ -43,5 +46,3 @@ if __name__ == "__main__":
     print(f"The list of {number_type} checked is: {numbers_to_check}")
     print(f"New best estimate is {best_n} / {best_m} ({new_closest_estimate}) which is correct to {places_correct_to} decimal places.")
     print(f"It took {duration:.6f} seconds to find the best rational estimate for pi using {number_type} up to {max_limit} which was {best_n}/{best_m}.")
-
-

@@ -56,9 +56,12 @@ def generate_square_numbers(max_limit):
 def generate_square_root_numbers(max_limit):
     square_root_numbers = []
 
-    for number in range(1, int((max_limit + 1) ** 0.5)):
+    for number in range(1, max_limit + 1):
         square_root_number = number ** 0.5
-        square_root_numbers.append(square_root_number)
+        if square_root_number <= max_limit + 1:
+            square_root_numbers.append(square_root_number)
+
+    return square_root_numbers
 
 
 # Cube Numbers
