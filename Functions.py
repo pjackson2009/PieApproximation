@@ -41,7 +41,7 @@ def generate_triangle_numbers(max_limit):
     return triangle_numbers
 
 
-# Triangle Numbers
+# Square Numbers
 def generate_square_numbers(max_limit):
     square_numbers = []
 
@@ -52,7 +52,16 @@ def generate_square_numbers(max_limit):
     return square_numbers
 
 
-# Triangle Numbers
+# Square Root Numbers
+def generate_square_root_numbers(max_limit):
+    square_root_numbers = []
+
+    for number in range(1, int((max_limit + 1) ** 0.5)):
+        square_root_number = number ** 0.5
+        square_root_numbers.append(square_root_number)
+
+
+# Cube Numbers
 def generate_cube_numbers(max_limit):
     cube_numbers = []
 
